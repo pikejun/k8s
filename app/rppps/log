@@ -1,0 +1,12 @@
+start task a at 2019年 04月 23日 星期二 15:02:42 CST
+ task a error at 2019年 04月 23日 星期二 15:02:43 CST
+start task b at 2019年 04月 23日 星期二 15:02:43 CST
+ task b error at 2019年 04月 23日 星期二 15:02:44 CST
+start task c at 2019年 04月 23日 星期二 15:02:44 CST
+ task c error at 2019年 04月 23日 星期二 15:02:45 CST
+start task a at 2019年 04月 23日 星期二 15:06:32 CST
+finished task a success at 2019年 04月 23日 星期二 15:06:33 CST
+start task b at 2019年 04月 23日 星期二 15:06:33 CST
+finished task b success at 2019年 04月 23日 星期二 15:06:34 CST
+start task c at 2019年 04月 23日 星期二 15:06:34 CST
+finished task c success at 2019年 04月 23日 星期二 15:06:35 CST
