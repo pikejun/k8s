@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  dnsmasq:
+    container_name: dnsmasq-server
+#    build: ./Dnsmasq
+    image: jpillora/dnsmasq
+    restart: always
+    privileged: true
+    ports:
+      - 8080:8080
+      - 53:53/udp
+      - 67:67/udp
+      - 69:69/udp
+    environment:
+      - HTTP_USER=foo
+      - HTTP_PASS=bar
+#      - VIRTUAL_HOST=dns.local
+    volumes:
+      - ./Dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf 
+      - ./Dnsmasq/ethers:/etc/ethers
+      - ./Dnsmasq/hosts:/etc/dnsmasq.hosts.d/hosts
+      - ./Dnsmasq/tftpboot:/var/lib/tftpboot
+    network_mode: "host"
+
+  vsftpd:
+    container_name: ftp-server
+    image: inanimate/vsftpd-anon
+    ports:
+      - "20-21:20-21"
+      - "65500-65515:65500-65515"
+    volumes:
+      - ./Dnsmasq/ftp:/var/ftp
+      - ./Dnsmasq/ks-centos7-rack.cfg:/var/ftp/ks-centos7.cfg
+
+
