@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: my-scheduler-job-8-tasks
+  # namespace: fast
+spec:
+  completions: 2
+  parallelism: 2
+  template:
+    metadata:
+      name: test-rppps
+    spec:
+      schedulerName: my-scheduler1
+      imagePullSecrets:
+      - name: registry-key
+      containers:
+      - image: hub.k8s:5000/centos
+        imagePullPolicy: Never
+        name: hell-world-job
+        command: ["/bin/echo"]
+        args: ["hello world"]
+      restartPolicy: Never
