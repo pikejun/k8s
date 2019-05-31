@@ -10,7 +10,7 @@ spec:
     metadata:
       name: test-rppps
     spec:
-      schedulerName: my-scheduler1
+      schedulerName: my-scheduler
       imagePullSecrets:
       - name: registry-key
       containers:
